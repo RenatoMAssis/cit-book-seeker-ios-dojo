@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		652E7C31237CC25F0072A4C2 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7C30237CC25F0072A4C2 /* BookModel.swift */; };
+		652E7C3C237CC72A0072A4C2 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7C3B237CC72A0072A4C2 /* URLSessionExtensions.swift */; };
 		8B57D69C237CB3F000168A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69B237CB3F000168A7D /* AppDelegate.swift */; };
 		8B57D69E237CB3F000168A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69D237CB3F000168A7D /* SceneDelegate.swift */; };
 		8B57D6A0237CB3F000168A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69F237CB3F000168A7D /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		652E7C30237CC25F0072A4C2 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		652E7C3B237CC72A0072A4C2 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		8B57D698237CB3F000168A7D /* BookSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B57D69B237CB3F000168A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B57D69D237CB3F000168A7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8B57D6CB237CC04900168A7D /* Dynamic.swift */,
+				652E7C3B237CC72A0072A4C2 /* URLSessionExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				652E7C31237CC25F0072A4C2 /* BookModel.swift in Sources */,
 				8B57D6A0237CB3F000168A7D /* ViewController.swift in Sources */,
+				652E7C3C237CC72A0072A4C2 /* URLSessionExtensions.swift in Sources */,
 				8B57D6CC237CC04900168A7D /* Dynamic.swift in Sources */,
 				8B57D69C237CB3F000168A7D /* AppDelegate.swift in Sources */,
 				8B57D69E237CB3F000168A7D /* SceneDelegate.swift in Sources */,
