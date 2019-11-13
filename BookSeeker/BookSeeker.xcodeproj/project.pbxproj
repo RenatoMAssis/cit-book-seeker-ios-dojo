@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652E7C31237CC25F0072A4C2 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7C30237CC25F0072A4C2 /* BookModel.swift */; };
 		8B57D69C237CB3F000168A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69B237CB3F000168A7D /* AppDelegate.swift */; };
 		8B57D69E237CB3F000168A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69D237CB3F000168A7D /* SceneDelegate.swift */; };
 		8B57D6A0237CB3F000168A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57D69F237CB3F000168A7D /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652E7C30237CC25F0072A4C2 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		8B57D698237CB3F000168A7D /* BookSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B57D69B237CB3F000168A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B57D69D237CB3F000168A7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		652E7C2F237CC2500072A4C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				652E7C30237CC25F0072A4C2 /* BookModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		652E7C32237CC2B20072A4C2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8B57D6CB237CC04900168A7D /* Dynamic.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		652E7C33237CC2CD0072A4C2 /* AppDelegateEtc */ = {
+			isa = PBXGroup;
+			children = (
+				8B57D69B237CB3F000168A7D /* AppDelegate.swift */,
+				8B57D69D237CB3F000168A7D /* SceneDelegate.swift */,
+			);
+			path = AppDelegateEtc;
+			sourceTree = "<group>";
+		};
+		652E7C34237CC2EB0072A4C2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8B57D6A1237CB3F000168A7D /* Main.storyboard */,
+				8B57D69F237CB3F000168A7D /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		652E7C35237CC30D0072A4C2 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				8B57D6A9237CB3F200168A7D /* Info.plist */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
+		652E7C36237CC3140072A4C2 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				8B57D6A4237CB3F200168A7D /* Assets.xcassets */,
+				8B57D6A6237CB3F200168A7D /* LaunchScreen.storyboard */,
+			);
+			path = Artwork;
+			sourceTree = "<group>";
+		};
 		8B57D68F237CB3F000168A7D = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +154,12 @@
 		8B57D69A237CB3F000168A7D /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
-				8B57D69B237CB3F000168A7D /* AppDelegate.swift */,
-				8B57D69D237CB3F000168A7D /* SceneDelegate.swift */,
-				8B57D69F237CB3F000168A7D /* ViewController.swift */,
-				8B57D6A1237CB3F000168A7D /* Main.storyboard */,
-				8B57D6A4237CB3F200168A7D /* Assets.xcassets */,
-				8B57D6A6237CB3F200168A7D /* LaunchScreen.storyboard */,
-				8B57D6A9237CB3F200168A7D /* Info.plist */,
-				8B57D6CB237CC04900168A7D /* Dynamic.swift */,
+				652E7C2F237CC2500072A4C2 /* Model */,
+				652E7C32237CC2B20072A4C2 /* Utilities */,
+				652E7C34237CC2EB0072A4C2 /* Screens */,
+				652E7C36237CC3140072A4C2 /* Artwork */,
+				652E7C33237CC2CD0072A4C2 /* AppDelegateEtc */,
+				652E7C35237CC30D0072A4C2 /* Metadata */,
 			);
 			path = BookSeeker;
 			sourceTree = "<group>";
@@ -262,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				652E7C31237CC25F0072A4C2 /* BookModel.swift in Sources */,
 				8B57D6A0237CB3F000168A7D /* ViewController.swift in Sources */,
 				8B57D6CC237CC04900168A7D /* Dynamic.swift in Sources */,
 				8B57D69C237CB3F000168A7D /* AppDelegate.swift in Sources */,
