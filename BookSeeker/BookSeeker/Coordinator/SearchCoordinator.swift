@@ -32,6 +32,13 @@ class SearchCoordinator {
         navigationController.pushViewController(viewModel.view, animated: true)
     }
     private func goToDetailsFlow(with book: Book) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
+        guard let view = mainStoryboard.instantiateViewController(identifier: "DetailsViewController") as?
+            DetailsViewController else {
+            return
+        }
+        let viewModel = DetailsViewModel(view: view, book: book)
+        navigationController.pushViewController(viewModel.view, animated: true)
     }
 }
 

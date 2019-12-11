@@ -22,12 +22,6 @@ class ResultTableViewCell: UITableViewCell, BaseTableViewCellProtocol {
     func configureCell(with imageURL: URL, and title: String, and delegate: ResultTableViewCellDelegate) {
         titleLabel.text = title
         self.delegate = delegate
-        activityIndicator.startAnimating()
-        delegate.getArtwork(with: imageURL) { (image, error) in
-            self.activityIndicator.stopAnimating()
-            if error != nil, let image = image {
-                self.artworkImageView.image = image
-            }
-        }
+        self.imageView?.image = try? UIImage(data: Data(contentsOf: imageURL))
     }
 }

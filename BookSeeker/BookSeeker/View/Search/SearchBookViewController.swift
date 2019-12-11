@@ -11,12 +11,17 @@ import UIKit
 class SearchBookViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tblVwContent: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var delegate: SearchBookViewControllerDelegate!
     private let preferences = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         configureSearchBar()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        activityIndicator.stopAnimating()
     }
     private func configureTableView() {
         tblVwContent.dataSource = self
@@ -56,6 +61,7 @@ extension SearchBookViewController: UITableViewDataSource {
 extension SearchBookViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let lastSearches = preferences.stringArray(forKey: "lastSearches") else { return }
+        activityIndicator.startAnimating()
         delegate?.doSearch(with: lastSearches[indexPath.row])
     }
 }
@@ -69,6 +75,7 @@ extension SearchBookViewController: UISearchBarDelegate {
         lastSearches.append(currentText)
         preferences.set(lastSearches, forKey: "lastSearches")
         tblVwContent.reloadData()
+        activityIndicator.startAnimating()
         delegate?.doSearch(with: currentText)
     }
 }

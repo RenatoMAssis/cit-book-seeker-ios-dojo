@@ -30,11 +30,16 @@ extension ResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tuple = delegate.cellForRow(with: indexPath.row)
         guard let cell = tblVwConteudo.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier,
-                                                           for: indexPath) as? ResultTableViewCell, let url = URL(string: tuple.imageURL) else {
+                                                           for: indexPath) as? ResultTableViewCell,
+            let url = URL(string: tuple.imageURL) else {
             return UITableViewCell()
         }
         cell.configureCell(with: url, and: tuple.title, and: self)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
