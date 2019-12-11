@@ -25,6 +25,10 @@ extension DetailsViewModel: DetailsViewControllerDelegate {
         guard let url = URL(string: book.artworkUrl100) else {
             return
         }
-        view.configureView(with: url, and: book.trackName, and: book.description, and: book.averageUserRating ?? 0.0, and: book.artistName)
+        view.configureView(with: url,
+                           and: book.trackName,
+                           and: book.description,
+                           and: book.averageUserRating ?? 0.0,
+                           and: book.artistName)
     }
 }

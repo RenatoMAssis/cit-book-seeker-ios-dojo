@@ -37,7 +37,6 @@ extension ResultsViewController: UITableViewDataSource {
         cell.configureCell(with: url, and: tuple.title, and: self)
         return cell
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
