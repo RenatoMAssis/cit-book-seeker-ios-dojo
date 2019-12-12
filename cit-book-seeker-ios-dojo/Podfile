@@ -1,0 +1,23 @@
+project 'cit-book-seeker-ios-dojo.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'cit-book-seeker-ios-dojo' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for cit-book-seeker-ios-dojo
+  pod 'SDWebImage', '~> 5.0'
+
+  target 'cit-book-seeker-ios-dojoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'cit-book-seeker-ios-dojoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
