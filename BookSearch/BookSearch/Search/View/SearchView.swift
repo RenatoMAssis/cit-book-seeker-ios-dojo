@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchView: UIView, BaseViewProtocol {
-    
+
     public lazy var tableView: UITableView! = {
         let tableView = UITableView()
         tableView.bounces = false

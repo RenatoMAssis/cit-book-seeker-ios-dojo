@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setupController()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -43,7 +43,7 @@ class SearchViewController: UIViewController {
         customView.searchController.searchBar.delegate = self
         customView.searchController.searchResultsUpdater = self
         customView.searchController.definesPresentationContext = true
-        
+
         self.navigationItem.searchController = customView.searchController
         viewModel.updateTableView()
     }

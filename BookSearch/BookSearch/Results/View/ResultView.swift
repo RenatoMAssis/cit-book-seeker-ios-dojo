@@ -9,11 +9,10 @@
 import UIKit
 
 class ResultView: UIView, BaseViewProtocol {
-    
+
     public lazy var tableView: UITableView! = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .purple
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()

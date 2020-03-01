@@ -11,6 +11,7 @@ import UIKit
 class ResultViewModel: ResultViewModelProtocol {
 
     private let view: ResultViewControllerProtocol!
+
     var searchResult: [Book]!
 
     init(view: ResultViewControllerProtocol, searchResult: [Book]) {

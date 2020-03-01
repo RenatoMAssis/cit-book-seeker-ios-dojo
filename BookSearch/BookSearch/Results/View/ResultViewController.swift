@@ -28,15 +28,18 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         setupController()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     func setupController() {
         self.title = "In Your Library"
+        view.setNeedsUpdateConstraints()
         customView.tableView.delegate = self
+        customView.tableView.dataSource = self
+        customView.tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "BookTableViewCell")
     }
 }
 
@@ -47,8 +50,9 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-        //TODO: - Return custom tableviewcell
+        guard let cell = (tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell) else { return UITableViewCell() }
+        cell.lbTitle.text = "---"
+        return cell
     }
 }
 
