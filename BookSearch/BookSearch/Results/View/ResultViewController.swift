@@ -11,9 +11,11 @@ import UIKit
 class ResultViewController: UIViewController {
 
     private let customView = ResultView()
+    private var viewModel: ResultViewModelProtocol!
 
-    init() {
+    init(bookList: [Book]) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = ResultViewModel(view: self, searchResult: bookList)
     }
 
     required init?(coder: NSCoder) {
@@ -45,13 +47,12 @@ class ResultViewController: UIViewController {
 
 extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //TODO: - Return list count
+        return self.viewModel.resultCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = (tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell) else { return UITableViewCell() }
-        cell.lbTitle.text = "---"
+        cell.setup(with: self.viewModel.getBookBy(index: indexPath.row))
         return cell
     }
 }

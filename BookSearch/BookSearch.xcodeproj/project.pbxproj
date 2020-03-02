@@ -35,6 +35,9 @@
 		687D66A1240BF74700E904B8 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D66A0240BF74700E904B8 /* SearchViewControllerProtocol.swift */; };
 		68B9CB1C240AE4CF00D980D7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9CB1B240AE4CF00D980D7 /* SearchViewModel.swift */; };
 		68B9CB1E240AE57A00D980D7 /* SearchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9CB1D240AE57A00D980D7 /* SearchViewModelProtocol.swift */; };
+		68FECDF0240C7E3B003DAE98 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FECDEF240C7E3B003DAE98 /* BookCellViewModel.swift */; };
+		68FECDF2240C7E57003DAE98 /* BookCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FECDF1240C7E57003DAE98 /* BookCellViewModelProtocol.swift */; };
+		68FECDF4240C7F3C003DAE98 /* BookTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FECDF3240C7F3C003DAE98 /* BookTableViewCellProtocol.swift */; };
 		900B223970C7D26EAB39A4F2 /* Pods_BookSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA163E8CA4C2287148AB9F7 /* Pods_BookSearch.framework */; };
 		BCC6BABBE4D77DC1D48FC951 /* Pods_BookSearch_BookSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DD15FEAB53C0E85CAB9165 /* Pods_BookSearch_BookSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		687D66A0240BF74700E904B8 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
 		68B9CB1B240AE4CF00D980D7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		68B9CB1D240AE57A00D980D7 /* SearchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelProtocol.swift; sourceTree = "<group>"; };
+		68FECDEF240C7E3B003DAE98 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
+		68FECDF1240C7E57003DAE98 /* BookCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		68FECDF3240C7F3C003DAE98 /* BookTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		6CA163E8CA4C2287148AB9F7 /* Pods_BookSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		745B4A0CE1A0F9ECC38B5F1F /* Pods-BookSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-BookSearchTests/Pods-BookSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86DD15FEAB53C0E85CAB9165 /* Pods_BookSearch_BookSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSearch_BookSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				685AA182240C60DB00FC4DCC /* BookTableViewCell.swift */,
+				68FECDF3240C7F3C003DAE98 /* BookTableViewCellProtocol.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 			children = (
 				685F4640240AFE7000FCAC3B /* ResultViewModel.swift */,
 				685F4642240B004C00FCAC3B /* ResultViewModelProtocol.swift */,
+				68FECDEF240C7E3B003DAE98 /* BookCellViewModel.swift */,
+				68FECDF1240C7E57003DAE98 /* BookCellViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,6 +342,7 @@
 				6813D665240A923D009760A2 /* Frameworks */,
 				6813D666240A923D009760A2 /* Resources */,
 				681A88E1240C20E500808379 /* ShellScript */,
+				88B66F14456C961474BCFBA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -370,6 +380,7 @@
 				6813D688240A923E009760A2 /* Sources */,
 				6813D689240A923E009760A2 /* Frameworks */,
 				6813D68A240A923E009760A2 /* Resources */,
+				0529AFB51300EBE680FBD601 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,6 +464,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0529AFB51300EBE680FBD601 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSearch-BookSearchUITests/Pods-BookSearch-BookSearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSearch-BookSearchUITests/Pods-BookSearch-BookSearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookSearch-BookSearchUITests/Pods-BookSearch-BookSearchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		345F91CF69410A504688BF69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,6 +564,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		88B66F14456C961474BCFBA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSearch/Pods-BookSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSearch/Pods-BookSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookSearch/Pods-BookSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -543,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FECDF2240C7E57003DAE98 /* BookCellViewModelProtocol.swift in Sources */,
 				6813D6AC240A9295009760A2 /* ResultViewController.swift in Sources */,
 				685F4643240B004C00FCAC3B /* ResultViewModelProtocol.swift in Sources */,
 				6813D6B1240A9295009760A2 /* SearchView.swift in Sources */,
@@ -552,6 +598,7 @@
 				687D66A1240BF74700E904B8 /* SearchViewControllerProtocol.swift in Sources */,
 				684EF7BD240C3DB000E450E2 /* Constant.swift in Sources */,
 				684EF7BB240C387700E450E2 /* ResultViewControllerProtocol.swift in Sources */,
+				68FECDF4240C7F3C003DAE98 /* BookTableViewCellProtocol.swift in Sources */,
 				685F463E240AF53B00FCAC3B /* ResultView.swift in Sources */,
 				685AA183240C60DB00FC4DCC /* BookTableViewCell.swift in Sources */,
 				687D669A240BE57000E904B8 /* APIRequests.swift in Sources */,
@@ -560,6 +607,7 @@
 				68B9CB1C240AE4CF00D980D7 /* SearchViewModel.swift in Sources */,
 				6813D66E240A923D009760A2 /* SceneDelegate.swift in Sources */,
 				687D669C240BE58600E904B8 /* APIRequestsProtocol.swift in Sources */,
+				68FECDF0240C7E3B003DAE98 /* BookCellViewModel.swift in Sources */,
 				6813D6AD240A9295009760A2 /* BaseViewProtocol.swift in Sources */,
 				6813D6AE240A9295009760A2 /* DetailViewController.swift in Sources */,
 				685F4641240AFE7000FCAC3B /* ResultViewModel.swift in Sources */,

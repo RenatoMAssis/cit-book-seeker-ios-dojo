@@ -10,4 +10,6 @@ import UIKit
 
 protocol ResultViewModelProtocol {
     func reloadTableView()
+    func resultCount() -> Int
+    func getBookBy(index: Int) -> Book
 }

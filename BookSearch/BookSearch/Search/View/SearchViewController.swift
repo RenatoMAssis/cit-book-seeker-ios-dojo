@@ -68,11 +68,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: SearchViewControllerProtocol {
-    func pushSearchResult(with books: [Book]) {
-        self.navigationController?.pushViewController(ResultViewController(), animated: true)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 
-    func reloadSearchHistoryList(_ data: [String]?) {
+    func pushSearchResult(controller: ResultViewController) {
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func reloadSearchHistoryList(data: [String]?) {
         // TODO: - Implement reload list
     }
 }

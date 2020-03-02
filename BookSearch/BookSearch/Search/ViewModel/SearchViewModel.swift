@@ -36,8 +36,13 @@ class SearchViewModel: SearchViewModelProtocol {
                     let description = item["description"] as? String else { return }
                 bookList.append(Book(title: title, artwork: picture, description: description))
             }
-            DispatchQueue.main.async {
-                strongSelf.view.pushSearchResult(with: bookList)
+
+            if bookList.count > 0 {
+                DispatchQueue.main.async {
+                    strongSelf.view.pushSearchResult(controller: ResultViewController(bookList: bookList))
+                }
+            } else {
+                strongSelf.view.showAlert(title: "Warning", message: "Your search did not match any book.")
             }
         }
     }

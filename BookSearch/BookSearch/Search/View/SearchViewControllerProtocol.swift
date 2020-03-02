@@ -9,6 +9,7 @@
 import UIKit
 
 protocol SearchViewControllerProtocol {
-    func reloadSearchHistoryList(_ data: [String]?)
-    func pushSearchResult(with books: [Book])
+    func reloadSearchHistoryList(data: [String]?)
+    func pushSearchResult(controller: ResultViewController)
+    func showAlert(title: String, message: String)
 }

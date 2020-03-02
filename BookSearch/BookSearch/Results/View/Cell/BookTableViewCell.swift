@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BookTableViewCell: UITableViewCell, BaseViewProtocol {
 
@@ -14,6 +15,8 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
         let label = UILabel()
         label.textColor = .darkGray
         label.textAlignment = .left
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -26,6 +29,8 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
         return imageView
     }()
 
+    private var viewModel: BookCellViewModelProtocol!
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
@@ -36,10 +41,8 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
         setupSubviews()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setup(with book: Book) {
+        viewModel = BookCellViewModel(view: self, book: book)
     }
 
     func setupSubviews() {
@@ -59,13 +62,19 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
 
             lbTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             lbTitle.leadingAnchor.constraint(equalTo: ivPicture.trailingAnchor, constant: 8),
-            lbTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            lbTitle.heightAnchor.constraint(equalToConstant: 16)
+            lbTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
         ])
         customSetup()
     }
 
     func customSetup() {
-//        self.bac
+        self.backgroundColor = .none
+    }
+}
+
+extension BookTableViewCell: BookTableViewCellProtocol {
+    func setupCell(title: String, pictureURL: String) {
+        self.lbTitle.text = title
+        self.ivPicture?.sd_setImage(with: URL(string: pictureURL), completed: nil)
     }
 }

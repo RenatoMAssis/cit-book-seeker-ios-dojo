@@ -9,7 +9,7 @@
 import UIKit
 
 class Book {
-    
+
     var title: String!
     var artwork: String!
     var description: String!

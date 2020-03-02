@@ -12,7 +12,7 @@ class ResultViewModel: ResultViewModelProtocol {
 
     private let view: ResultViewControllerProtocol!
 
-    var searchResult: [Book]!
+    public let searchResult: [Book]!
 
     init(view: ResultViewControllerProtocol, searchResult: [Book]) {
         self.view = view
@@ -21,5 +21,13 @@ class ResultViewModel: ResultViewModelProtocol {
 
     func reloadTableView() {
         //
+    }
+
+    func resultCount() -> Int {
+        return searchResult.count
+    }
+
+    func getBookBy(index: Int) -> Book {
+        return searchResult[index]
     }
 }
