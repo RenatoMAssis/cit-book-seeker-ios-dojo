@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ResultViewModelProtocol {
+    func reloadTableView()
+    func resultCount() -> Int
+    func getBookBy(index: Int) -> Book
+}
+
 class ResultViewModel: ResultViewModelProtocol {
 
     private let view: ResultViewControllerProtocol!
@@ -20,7 +26,7 @@ class ResultViewModel: ResultViewModelProtocol {
     }
 
     func reloadTableView() {
-        //
+        self.view.reloadTableView()
     }
 
     func resultCount() -> Int {

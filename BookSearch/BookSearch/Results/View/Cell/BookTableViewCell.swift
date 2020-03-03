@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol BookTableViewCellProtocol {
+    func setupCell(title: String, pictureURL: String)
+}
+
 class BookTableViewCell: UITableViewCell, BaseViewProtocol {
 
     public lazy var lbTitle: UILabel! = {
@@ -56,8 +60,8 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
         NSLayoutConstraint.activate([
             ivPicture.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             ivPicture.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            ivPicture.heightAnchor.constraint(equalToConstant: 100),
-            ivPicture.widthAnchor.constraint(equalToConstant: 70),
+            ivPicture.heightAnchor.constraint(equalToConstant: Constant.bookImgHeight),
+            ivPicture.widthAnchor.constraint(equalToConstant: Constant.bookImgWidth),
             ivPicture.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
 
             lbTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),

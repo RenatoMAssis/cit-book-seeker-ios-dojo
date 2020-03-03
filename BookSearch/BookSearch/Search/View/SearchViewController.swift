@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol SearchViewControllerProtocol {
+    func reloadTableView()
+    func pushSearchResult(controller: ResultViewController)
+    func showAlert(title: String, message: String)
+}
+
 class SearchViewController: UIViewController {
 
     private let customView = SearchView()
@@ -34,36 +40,33 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        reloadTableView()
     }
 
     private func setupController() {
         self.title = "Search"
         view.setNeedsUpdateConstraints()
         customView.tableView.delegate = self
+        customView.tableView.dataSource = self
+        customView.tableView.register(TermTableViewCell.self, forCellReuseIdentifier: "TermTableViewCell")
         customView.searchController.searchBar.delegate = self
-        customView.searchController.searchResultsUpdater = self
         customView.searchController.definesPresentationContext = true
-
         self.navigationItem.searchController = customView.searchController
         viewModel.updateTableView()
     }
 }
 
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO - Implement method
-    }
-}
-
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //TODO: - return list count
+        return self.viewModel.searchTermsCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-        //TODO: - return custom UITableViewCell
+        guard let cell = (tableView.dequeueReusableCell(withIdentifier: "TermTableViewCell",
+                                                        for: indexPath) as? TermTableViewCell) else {
+                                                            return UITableViewCell() }
+        cell.setup(with: self.viewModel.searchTermBy(index: indexPath.row))
+        return cell
     }
 }
 
@@ -79,8 +82,8 @@ extension SearchViewController: SearchViewControllerProtocol {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func reloadSearchHistoryList(data: [String]?) {
-        // TODO: - Implement reload list
+    func reloadTableView() {
+        self.customView.tableView.reloadData()
     }
 }
 

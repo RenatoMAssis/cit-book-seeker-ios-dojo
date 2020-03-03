@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol BookCellViewModelProtocol {
+    func setupCell()
+}
+
 class BookCellViewModel: BookCellViewModelProtocol {
 
     private let view: BookTableViewCellProtocol!

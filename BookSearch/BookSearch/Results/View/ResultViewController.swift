@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ResultViewControllerProtocol {
+    func reloadTableView()
+}
+
 class ResultViewController: UIViewController {
 
     private let customView = ResultView()
@@ -42,6 +46,7 @@ class ResultViewController: UIViewController {
         customView.tableView.delegate = self
         customView.tableView.dataSource = self
         customView.tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "BookTableViewCell")
+        viewModel.reloadTableView()
     }
 }
 
@@ -51,12 +56,22 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = (tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell) else { return UITableViewCell() }
+        guard let cell = (tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell",
+                                                        for: indexPath) as? BookTableViewCell) else {
+                                                            return UITableViewCell() }
         cell.setup(with: self.viewModel.getBookBy(index: indexPath.row))
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(
+            DetailViewController(book: self.viewModel.getBookBy(index: indexPath.row)),
+            animated: true)
     }
 }
 
 extension ResultViewController: ResultViewControllerProtocol {
-
+    func reloadTableView() {
+        self.customView.tableView.reloadData()
+    }
 }

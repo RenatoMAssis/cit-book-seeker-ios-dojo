@@ -11,11 +11,20 @@ import UIKit
 class Book {
 
     var title: String!
+    var kind: String!
+    var author: String!
     var artwork: String!
     var description: String!
 
-    init(title: String, artwork: String, description: String) {
+    init(title: String,
+         artwork: String,
+         description: String,
+         author: String,
+         kind: String) {
+
+        self.kind = kind
         self.title = title
+        self.author = author
         self.artwork = artwork
         self.description = description
     }

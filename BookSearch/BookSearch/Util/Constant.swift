@@ -10,4 +10,6 @@ import UIKit
 
 class Constant {
     static let baseUrl: String = "https://itunes.apple.com/search"
+    static let bookImgWidth: CGFloat = 70
+    static let bookImgHeight: CGFloat = 100
 }
