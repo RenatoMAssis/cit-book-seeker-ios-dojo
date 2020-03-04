@@ -44,10 +44,11 @@ class SearchViewModel: SearchViewModelProtocol {
     }
 
     func searchBook(with term: String) {
+
+        CoreDataManager.save(term: term)
+
         dataSource.searchBook(term: term) { [weak self] (data, _) in
             guard let strongSelf = self, let jsonData = data else { return }
-
-            CoreDataManager.save(term: term)
 
             var bookList = [Book]()
             for item in jsonData {

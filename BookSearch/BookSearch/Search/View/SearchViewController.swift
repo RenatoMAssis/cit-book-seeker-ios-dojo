@@ -40,7 +40,7 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        reloadTableView()
+        viewModel.updateTableView()
     }
 
     private func setupController() {

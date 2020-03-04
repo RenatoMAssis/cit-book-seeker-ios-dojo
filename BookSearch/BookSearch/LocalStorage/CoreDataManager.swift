@@ -10,14 +10,13 @@ import UIKit
 import CoreData
 
 class CoreDataManager {
+
     static func save(term: String) {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-
         let managedContext = appDelegate.persistentContainer.viewContext
 
         let entity = NSEntityDescription.entity(forEntityName: "SearchTerm", in: managedContext)!
-
         let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
 
         searchTerm.setValue(term, forKeyPath: "text")
@@ -30,7 +29,6 @@ class CoreDataManager {
     static func fetchData() -> [NSManagedObject]? {
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
-
         let managedContext = appDelegate.persistentContainer.viewContext
 
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SearchTerm")

@@ -73,6 +73,7 @@ class BookTableViewCell: UITableViewCell, BaseViewProtocol {
 
     func customSetup() {
         self.backgroundColor = .none
+        self.selectionStyle = .none
     }
 }
 

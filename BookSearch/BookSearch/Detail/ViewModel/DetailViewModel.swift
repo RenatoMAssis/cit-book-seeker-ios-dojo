@@ -27,7 +27,8 @@ class DetailViewModel: DetailViewModelProtocol {
         view.setupBookdata(title: book.title,
                            author: book.author,
                            kind: book.kind,
-                           description: book.description)
+                           description: book.description,
+                           artwork: book.artwork)
     }
 
     func bookTitle() -> String {

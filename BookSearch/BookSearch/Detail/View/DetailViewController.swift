@@ -9,7 +9,11 @@
 import UIKit
 
 protocol DetailViewControllerProtocol {
-    func setupBookdata(title: String, author: String, kind: String, description: String)
+    func setupBookdata(title: String,
+                       author: String,
+                       kind: String,
+                       description: String,
+                       artwork: String)
 }
 
 class DetailViewController: UIViewController {
@@ -49,10 +53,11 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailViewControllerProtocol {
-    func setupBookdata(title: String, author: String, kind: String, description: String) {
-        self.customView.lbKind.text = kind
-        self.customView.lbTitle.text = title
-        self.customView.lbAuthor.text = author
-        self.customView.lbDescription.text = description
+    func setupBookdata(title: String, author: String, kind: String, description: String, artwork: String) {
+        self.customView.infoView.lbKind.text = kind
+        self.customView.infoView.lbTitle.text = title
+        self.customView.infoView.lbAuthor.text = author
+        self.customView.infoView.lbDescription.text = description + description + description
+        self.customView.infoView.ivPicture.sd_setImage(with: URL(string: artwork), completed: nil)
     }
 }
